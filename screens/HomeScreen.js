@@ -1,9 +1,9 @@
 import { View, Text, Image } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { ChevronDownIcon, UserIcon, AdjustmentsIcon, SearchIcon, AdjustmentsHorizontalIcon } from 'react-native-heroicons/outline';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronDownIcon, UserIcon } from 'react-native-heroicons/outline';
-
+import { SearchBar } from 'react-native-screens';
 const HomeScreen = () => {
     const navigation = useNavigation();
 
@@ -11,9 +11,9 @@ const HomeScreen = () => {
         navigation.setOptions({
             headerShown: false,
         });
-    }, [])
+    }, []);
     return (
-        <SafeAreaView className='bg-white pt-5 shadow-lg'>
+        <SafeAreaView className='bg-white pt-5'>
             <Text className=' text-red-500'>
                 <View className='flex-row pb-3 items-center mx-4 space-x-2' >
                     <Image source={{
@@ -21,6 +21,7 @@ const HomeScreen = () => {
                     }}
                         className='h-7 w-7 bg-gray-300 p-4 rounded-full'
                     />
+
                     <View className='flex-1'>
                         <Text className='font-bold text-gray-400 text-xs' >
                             Deliver Now!
@@ -30,10 +31,14 @@ const HomeScreen = () => {
                             <ChevronDownIcon size={20} color="#00CCBB" />
                         </Text>
                     </View>
+                    <View  >
+                        <UserIcon color="#00CCBB" size={30} />
+                    </View>
 
-                    <UserIcon size={35} color="#00CCBB" />
                 </View>
+
             </Text>
+            <AdjustmentsHorizontalIcon color="#00CCBB" />
         </SafeAreaView>
     );
 };
